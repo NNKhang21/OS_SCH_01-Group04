@@ -1,4 +1,4 @@
-process_id;arrival_time;burst_time;start_time;finish_time;waiting_time;turnaround_time
+﻿process_id;arrival_time;burst_time;start_time;finish_time;waiting_time;turnaround_time
 P1;0;8;0;8;0;8
 P9;8;1;8;9;0;1
 P5;4;2;9;11;5;7
