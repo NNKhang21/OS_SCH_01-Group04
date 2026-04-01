@@ -7,7 +7,6 @@
 
 using namespace std;
 
-// ===== LỚP PROCESS =====
 class Process {
 public:
     int pid;
@@ -21,7 +20,6 @@ public:
         : pid(id), arrival(a), burst(b), waiting(0), turnaround(0), completion(0) {}
 };
 
-// ===== LỚP XỬ LÝ ĐẦU VÀO =====
 class InputHandler {
 public:
     static bool readInt(int& x) {
@@ -35,7 +33,6 @@ public:
     }
 };
 
-// ===== LỚP CƠ SỞ SCHEDULER =====
 class Scheduler {
 protected:
     vector<Process> processes;
@@ -76,7 +73,6 @@ public:
     }
 };
 
-// ===== LỚP DẪN XUẤT: FCFS SCHEDULER =====
 class FCFSScheduler : public Scheduler {
 public:
     FCFSScheduler(const vector<Process>& p) : Scheduler("FCFS", p) {}
@@ -107,7 +103,6 @@ public:
     }
 };
 
-// ===== HÀM MAIN CHO FCFS =====
 int main() {
     int n;
 cout << "--- FCFS SCHEDULING ---\n";
