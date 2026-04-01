@@ -71,3 +71,57 @@ public:
         }
     }
 };
+
+// ==========================================
+// Thực hiện bởi: Phạm Thái Khang
+// ==========================================
+class SJFScheduler : public Scheduler {
+public:
+    SJFScheduler(const vector<Process>& p) : Scheduler("SJF (Non-Preemptive)", p) {}
+
+    void execute() override {
+        int n = processes.size();
+
+        sort(processes.begin(), processes.end(), [](const Process& a, const Process& b) {
+            return a.arrival < b.arrival;
+        });
+
+        int currentTime = 0;
+        vector<bool> completed(n, false);
+        int completedCount = 0;
+
+        while (completedCount < n) {
+            int idx = -1;
+            int minBurst = numeric_limits<int>::max();
+
+            for (int i = 0; i < n; i++) {
+                if (!completed[i] && processes[i].arrival <= currentTime) {
+                    if (processes[i].burst < minBurst) {
+                        minBurst = processes[i].burst;
+                        idx = i;
+                    }
+                }
+            }
+
+            if (idx == -1) {
+                currentTime++;
+                continue;
+            }
+
+            currentTime += processes[idx].burst;
+            processes[idx].completion = currentTime;
+            processes[idx].turnaround = processes[idx].completion - processes[idx].arrival;
+            processes[idx].waiting = processes[idx].turnaround - processes[idx].burst;
+
+            totalWT += processes[idx].waiting;
+            totalTAT += processes[idx].turnaround;
+
+            completed[idx] = true;
+            completedCount++;
+        }
+
+        sort(processes.begin(), processes.end(), [](const Process& a, const Process& b) {
+            return a.completion < b.completion;
+        });
+    }
+};
