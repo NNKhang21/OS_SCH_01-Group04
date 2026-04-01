@@ -125,3 +125,33 @@ public:
         });
     }
 };
+
+int main() {
+    int n;
+    cout << "--- SJF SCHEDULING (Non-Preemptive) ---\n";
+    cout << "Enter number of processes: ";
+    if (!InputHandler::readInt(n) || n <= 0) {
+        cout << "Invalid number of processes.\n";
+        return 1;
+    }
+
+    vector<Process> processes;
+    processes.reserve(n);
+
+    for (int i = 0; i < n; i++) {
+        int arrival, burst;
+        cout << "\nProcess " << i + 1 << endl;
+        cout << "Arrival Time: ";
+        if (!InputHandler::readInt(arrival)) return 1;
+        cout << "Burst Time: ";
+        if (!InputHandler::readInt(burst)) return 1;
+
+        processes.emplace_back(i + 1, arrival, burst);
+    }
+
+    SJFScheduler sjf(processes);
+    sjf.execute();
+    sjf.display();
+
+    return 0;
+}
