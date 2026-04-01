@@ -3,7 +3,7 @@
 #include <string.h>
  
 typedef struct {
-    int id;           // Mã tiến trình 
+    char pid[16];           // Mã tiến trình 
     int arrival;      // Arrival Time  
     int burst;        // Burst Time    
     int start;        // Start Time   
