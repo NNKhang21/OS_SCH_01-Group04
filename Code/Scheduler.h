@@ -8,9 +8,7 @@
 
 using namespace std;
 
-// ==========================================
 // LỚP PROCESS
-// ==========================================
 class Process {
 public:
     int pid;
@@ -24,9 +22,7 @@ public:
         : pid(id), arrival(a), burst(b), waiting(0), turnaround(0), completion(0) {}
 };
 
-// ==========================================
 // LỚP CƠ SỞ SCHEDULER
-// ==========================================
 class Scheduler {
 protected:
     vector<Process> processes;
@@ -49,9 +45,7 @@ public:
     string getAlgoName() const { return algoName; }
 };
 
-// ==========================================
 // LỚP FCFS SCHEDULER
-// ==========================================
 class FCFSScheduler : public Scheduler {
 public:
     FCFSScheduler(const vector<Process>& p) : Scheduler("FCFS", p) {}
@@ -81,9 +75,7 @@ public:
     }
 };
 
-// ==========================================
 // LỚP SJF SCHEDULER (NON-PREEMPTIVE)
-// ==========================================
 class SJFScheduler : public Scheduler {
 public:
     SJFScheduler(const vector<Process>& p) : Scheduler("SJF (Non-Preemptive)", p) {}
