@@ -10,7 +10,7 @@ public:
 
     void execute() override {
         // Sắp xếp theo arrival time
-        sort(processes.begin(), processes.end(),
+        std::sort(processes.begin(), processes.end(),
              [](const Process& a, const Process& b) {
                  return a.arrival < b.arrival;
              });
