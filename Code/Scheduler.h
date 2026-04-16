@@ -34,7 +34,7 @@ protected:
 
 public:
     Scheduler(string name, const vector<Process>& p)
-        : algoName(name), processes(p), totalWT(0), totalTAT(0) {}
+        : processes(p), totalWT(0), totalTAT(0), algoName(name) {}
 
     virtual ~Scheduler() = default;
 
