@@ -1,0 +1,72 @@
+HOW-TO — Setup & Run Guide
+OS_SCH_01 | CPU Scheduling Simulator (FCFS & SJF)
+Language: C++17 | Framework: Qt 6 | Platform: Windows
+
+1. Requirements
+Software	Version	Download
+Qt Creator	19.0.0	https://www.qt.io/download
+Qt Framework	6.11.0 (Desktop)	Included in Qt installer
+MinGW	13.1.0 64-bit	Included in Qt installer
+
+2. Install Qt (if not installed)
+   1. Download Qt Online Installer: https://www.qt.io/download-qt-installer
+   2. Run installer → Login with Qt account (free)
+   3. Select Custom installation
+   4. Check the following:
+       Qt 6.11.0 → MinGW 13.1.0 64-bit
+       Qt Creator 19.0.0
+       Developer Tools → MinGW 13.1.0 64-bit
+   5. Click Next → Install → wait >=30 minutes
+
+3. Run the GUI App
+Option A — Qt Creator (Recommended)
+1. Open Qt Creator
+2. File → Open File or Project
+3. Select: Code/untitled1.pro
+4. Click "Configure Project" → choose Desktop Qt 6.11.0 MinGW 64-bit
+5. Press Ctrl+R to Build & Run
+
+Option B — Run .exe directly (No Qt needed)
+1. Go to folder in GitHub
+2. Double-click: untitled1.exe
+(All required .dll files are included)
+
+4. Using the App
+Step	Button	Action
+1	Load CSV	Load input file from Code/Input/ folder
+2	Simulate	Select FCFS / SJF / Run Both → click Simulate
+3	Export CSV	Results saved to Code/Output/ folder
+4	Stress Test	Auto-generates N=100→10,000 processes and measures performance
+5	Clear	Reset all data
+
+Input CSV format:
+csv
+ArrivalTime,BurstTime
+0,6
+2,4
+4,2
+
+5. Run Unit Test
+
+Option A — Qt Creator
+1.Open Code/untitled1.pro in Qt Creator
+2.Edit untitled1.pro — change SOURCES to: SOURCES += Unit_test.cpp (remove main.cpp and mainwindow.cpp)
+3.Press Ctrl+R
+4.Results shown in Application Output tab
+
+Option B — CMD (requires MinGW in PATH)
+cmd
+# Open CMD, go to Code/ folder
+cd Code
+# Compile
+C:\Qt\Tools\mingw1310_64\bin\g++.exe -std=c++17 -o unit_test Unit_test.cpp
+# Run
+unit_test.exe
+Expected result: 7 / 7 test PASS (Verified against Silberschatz OSC 10th Edition, Chapter 5,
+Figure 5.3 & 5.4)
+
+6.Tested Environment
+OS: Windows 11 64-bit
+Qt Creator 19.0.0
+Qt 6.11.0 MinGW 64-bit
+C++17
