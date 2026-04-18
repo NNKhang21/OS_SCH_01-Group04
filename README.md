@@ -187,7 +187,7 @@ Kết quả stress test được tự động xuất ra file `output/StressTest_
 |------------|---------------|---------|
 | **N.Khang** (Nhóm trưởng) | `Scheduler.h`, `FCFS.h`, `untitled1.exe` | Thiết kế kiến trúc, implement FCFS, quản lý repo |
 | **Hải Sơn** | `UNIT_TEST.cpp` | Viết unit test |
-| **P.Khang** |`SJF.h`, `main.cpp`, `mainwindow.cpp`, `widget.cpp` | Implement SJF, Logic giao diện, stress test, Gantt chart |
+| **P.Khang** |`SJF.h`, `main.cpp`, `mainwindow.cpp`| Implement SJF, Logic giao diện, stress test, Gantt chart |
 | **P.Khánh** | `mainwindow.h`, `mainwindow.ui`, `untitled1.pro` | Thiết kế UI, cấu hình Qt project |
 | **T.Thủy** | `SJF INPUT.csv`, `SJF OUTPUT.csv` | Chuẩn bị dữ liệu SJF, phân tích kết quả |
 | **K.Băng** | `FCFS INPUT.csv`, `FCFS OUTPUT.csv` | Chuẩn bị dữ liệu FCFS, so sánh kết quả |
