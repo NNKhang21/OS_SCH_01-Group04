@@ -195,7 +195,7 @@ Kết quả stress test được tự động xuất ra file `output/StressTest_
 
 ## Video Demo
 
-> 🎬 **Link video:** _[Cập nhật sau khi upload lên YouTube]_
+> 🎬 **Link video:** (https://youtu.be/P_r7Eo8Qrmo)
 
 Video trình bày toàn bộ tính năng của app, mỗi thành viên trình bày phần mình phụ trách.
 
