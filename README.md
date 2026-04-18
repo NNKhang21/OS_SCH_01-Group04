@@ -57,7 +57,6 @@ OS_SCH_01/
 ├── mainwindow.h         # Khai báo lớp MainWindow
 ├── mainwindow.cpp       # Logic giao diện & xử lý sự kiện
 ├── mainwindow.ui        # Thiết kế UI (Qt Designer)
-├── widget.cpp           # Widget phụ trợ
 ├── untitled1.pro        # Cấu hình build Qt
 ├── UNIT_TEST.cpp        # Bộ unit test (7 test cases, ref: Silberschatz)
 ├── FCFS INPUT.csv       # File CSV đầu vào mẫu cho FCFS
