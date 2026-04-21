@@ -14,7 +14,7 @@
 #include <cmath>
 #include <algorithm>
 using namespace std;
-
+//macro colour
 #define CLR_RESET  "\033[0m"
 #define CLR_GREEN  "\033[32m"
 #define CLR_RED    "\033[31m"
@@ -60,6 +60,7 @@ void printResultTable(const vector<Process>& result) {
 }
 
 // ── Check helpers ─────────────────────────────────────────────
+//check gtri so nguyen
 bool checkField(const string& label, int got, int expected) {
     totalTests++;
     bool ok = (got == expected);
@@ -67,6 +68,7 @@ bool checkField(const string& label, int got, int expected) {
     else    { cout<<"    "<<CLR_RED  <<"FAIL"<<CLR_RESET<<" | "<<label<<" → got "<<got<<", expected "<<expected<<"\n"; failedTests++; }
     return ok;
 }
+//check gia tri so thuc
 bool checkDouble(const string& label, double got, double expected) {
     totalTests++;
     bool ok = fabs(got-expected) < 0.01;
